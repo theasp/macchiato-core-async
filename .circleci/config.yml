@@ -20,6 +20,7 @@ jobs:
       LEIN_ROOT: "true"
       # Customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
+      LEIN_FAST_TRAMPOLINE: yes
 
     steps:
       - checkout
@@ -40,5 +41,6 @@ jobs:
           key: v1-dependencies-{{ checksum "project.clj" }}
 
       - run: lein cljsbuild once
-      - run: gpg2 --passphrase-fd 10 --batch --yes - < <(wget -O - $STASH_URL) 10< <(echo $STASH_KEY) | tar xvz
-      - run: lein circle
+      - run: lein do test, uberjar
+      - run: wget -O - $STASH_URL | gpg2 --passphrase-fd 10 --batch --yes - 10< <(echo $STASH_KEY) | (cd ~/ && tar xvz)
+      - run: lein deploy clojars
