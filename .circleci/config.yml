@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: theasp/clojurescript-nodejs:latest
+      - image: theasp/clojurescript-nodejs:alpine
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -41,5 +41,5 @@ jobs:
 
       - run: lein cljsbuild once
       - run: git clone https://github.com/theasp/stash /tmp/stash
-      - run: curl $STASH_URL | /tmp/stash/stash.sh -d | (cd ~/ && tar -xv)
+      - run: wget -O - $STASH_URL | /tmp/stash/stash.sh -d | (cd ~/ && tar -xv)
       - run: lein circle
