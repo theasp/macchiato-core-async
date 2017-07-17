@@ -40,5 +40,5 @@ jobs:
           key: v1-dependencies-{{ checksum "project.clj" }}
 
       - run: lein cljsbuild once
-      - run: gpg2 --symmetric --passphrase-fd 10 --batch --yes - < <(wget -O - $STASH_URL) 10< <(echo $STASH_KEY) | tar xvz
+      - run: gpg2 --passphrase-fd 10 --batch --yes - < <(wget -O - $STASH_URL) 10< <(echo $STASH_KEY) | tar xvz
       - run: lein circle
