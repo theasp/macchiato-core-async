@@ -7,6 +7,7 @@
                  [macchiato/core "0.1.8"]]
   :jvm-opts ^:replace ["-Xmx1g" "-server"]
   :plugins [[lein-npm "0.6.2"]
+            [lein-cljsbuild "1.1.6"]
             [lein-codox "0.10.2"]]
   :npm {:dependencies [[source-map-support "0.4.0"]]}
   :source-paths ["src" "target/classes"]
