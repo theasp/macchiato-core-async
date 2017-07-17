@@ -30,4 +30,14 @@
                   ["deploy" "clojars"]
                   ["change" "version" "leiningen.release/bump-version"]
                   ["vcs" "commit"]
-                  ["vcs" "push"]])
+                  ["vcs" "push"]]
+
+  :cljsbuild {:builds
+              [{:id           "macchiato-core-async"
+                :source-paths ["src/cljs"]
+                :jar          true
+                :compiler
+                {:output-dir    "target/js"
+                 :output-to     "target/js/macchiato_core_async.js"
+                 :optimizations :whitespace
+                 :pretty-print  false}}]})
