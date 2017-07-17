@@ -40,6 +40,7 @@ jobs:
           key: v1-dependencies-{{ checksum "project.clj" }}
 
       - run: lein cljsbuild once
+      - run: apk --no-cache add git
       - run: git clone https://github.com/theasp/stash /tmp/stash
       - run: wget -O - $STASH_URL | /tmp/stash/stash.sh -d | (cd ~/ && tar -xv)
       - run: lein circle
