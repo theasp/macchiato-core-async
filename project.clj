@@ -1,4 +1,4 @@
-(defproject ca.gt0.theasp/macchiato-core-async "0.1.0-SNAPSHOT"
+(defproject ca.gt0.theasp/macchiato-core-async "0.1.0"
   :description "Core.async ring handler support for Macchiato"
   :url "https://github.com/theasp/macchiato-core-async"
   :license {:name "MIT License"
