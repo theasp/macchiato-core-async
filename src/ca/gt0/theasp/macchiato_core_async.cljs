@@ -6,7 +6,6 @@
     :refer [<! chan put! close! onto-chan to-chan]]
    [cljs.core.async.impl.protocols :as async-protos]
    [macchiato.util.response :as r]
-   [macchiato.http :as http]
    [taoensso.timbre :as timbre
     :refer-macros (tracef debugf infof warnf errorf)]))
 
