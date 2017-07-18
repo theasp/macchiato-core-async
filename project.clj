@@ -1,6 +1,8 @@
 (defproject ca.gt0.theasp/macchiato-core-async "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+  :description "Core.async ring handler support for Macchiato"
+  :url "https://github.com/theasp/macchiato-core-async"
+  :license {:name "MIT License"
+            :url  "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.671"]
                  [com.taoensso/timbre "4.10.0"]
