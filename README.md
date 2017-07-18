@@ -1,4 +1,6 @@
-A library for using `core.async` with [Macchiato](https://macchiato-framework.github.io/).
+[![CircleCI](https://circleci.com/gh/theasp/macchiato-core-async.svg?style=svg)](https://circleci.com/gh/theasp/macchiato-core-async)
+
+A library for using [`core.async`](https://github.com/clojure/core.async/) with the [Macchiato Framework](https://macchiato-framework.github.io/).
 
 # Example
 
