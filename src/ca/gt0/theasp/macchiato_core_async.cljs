@@ -49,7 +49,7 @@
   "Create a Macchiato ring handler that accepts `req`, `res` and
   `raise`, but wraps a more conventional ring handler that only
   accepts `req` as an argument, and can either return a map as a
-  response, or `core.async` channel that will have the response."
+  response, or a `core.async` channel that will have the response."
   [handler-fn]
   (fn [req res raise]
     (try
