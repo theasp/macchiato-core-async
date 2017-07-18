@@ -1,4 +1,4 @@
-(defproject ca.gt0.macchiato-core-async "0.1.0-SNAPSHOT"
+(defproject ca.gt0.theasp/macchiato-core-async "0.1.0-SNAPSHOT"
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.8.0"]

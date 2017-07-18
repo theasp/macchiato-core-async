@@ -1,4 +1,4 @@
-(ns ca.gt0.macchiato-core-async.core
+(ns ca.gt0.theasp.macchiato-core-async.core
   (:require-macros
    [cljs.core.async.macros :refer [go go-loop]])
   (:require
