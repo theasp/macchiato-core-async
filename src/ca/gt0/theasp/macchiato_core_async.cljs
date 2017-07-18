@@ -10,7 +10,7 @@
    [taoensso.timbre :as timbre
     :refer-macros (tracef debugf infof warnf errorf)]))
 
-(defn read-port?
+(defn- read-port?
   "Here be dragons"
   [c]
   (satisfies? async-protos/ReadPort c))
