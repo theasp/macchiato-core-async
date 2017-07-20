@@ -11,7 +11,7 @@ A library for using [`core.async`](https://github.com/clojure/core.async/) with 
    [cljs.core.async.macros :refer [go go-loop]]
    [hiccups.core :as hiccups :refer [html]])
   (:require
-   [ca.gt0.macchiato-core-async :as m-async]
+   [ca.gt0.theasp.macchiato-core-async :as m-async]
    [macchiato.server :as http]
    [macchiato.middleware.defaults :as defaults]
    [macchiato.middleware.restful-format :as restful-format]
