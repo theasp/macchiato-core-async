@@ -32,9 +32,7 @@
   [res response]
   (cond
     (nil? response)
-    (do
-      (warnf "Empty response")
-      (res (r/not-found)))
+    (res nil)
 
     (read-port? response)
     (go (handle-response res (<! response)))
