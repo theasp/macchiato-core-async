@@ -18,27 +18,34 @@
 (defn stream-response
   "Handle a response, but read the body as a `core.async` channel"
   [{:keys [body] :as response}]
-  (errorf "stream-response not implemented!")
-  #_(let [stream (new js/stream.Writable)]
-      (go-loop []
+  (warnf "stream-response is untested!")
+  (let [stream (new js/stream.Writable)]
+    (go
+      (loop []
         (when-let [data (<! body)]
           (.write stream data)
-          (recur))
-        (.end stream))
-      (assoc response :body stream)))
+          (recur)))
+      (.end stream))
+    (assoc response :body stream)))
+
+(defn map-response [req response]
+  (if (read-port? (:body response))
+    (stream-response response)
+    response))
 
 (defn handle-response
   "Handle a response, as a map or a `core.async` channel"
-  [res response]
+  [req res response]
+
   (cond
     (nil? response)
     (res nil)
 
     (read-port? response)
-    (go (handle-response res (<! response)))
+    (go (handle-response req res (<! response)))
 
-    (read-port? (:body response))
-    (res (stream-response response))
+    (map? response)
+    (res (map-response req response))
 
     :else
     (res response)))
@@ -51,7 +58,7 @@
   [handler-fn]
   (fn [req res raise]
     (try
-      (handle-response res (handler-fn req))
+      (handle-response req res (handler-fn req))
       (catch js/Error e
         (errorf "Caught exception: %s" (.-stack e))
         (raise e)))))
