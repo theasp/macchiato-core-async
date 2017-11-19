@@ -4,9 +4,9 @@
   :license {:name "MIT License"
             :url  "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.671"]
+                 [org.clojure/clojurescript "1.9.946"]
                  [com.taoensso/timbre "4.10.0"]
-                 [macchiato/core "0.1.8"]]
+                 [macchiato/core "0.2.2"]]
   :jvm-opts ^:replace ["-Xmx1g" "-server"]
   :plugins [[lein-npm "0.6.2"]
             [lein-cljsbuild "1.1.6"]
