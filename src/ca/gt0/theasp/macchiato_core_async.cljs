@@ -47,6 +47,9 @@
     (map? response)
     (res (map-response req response))
 
+    (instance? js/Error response)
+    (throw response)
+
     :else
     (res response)))
 
