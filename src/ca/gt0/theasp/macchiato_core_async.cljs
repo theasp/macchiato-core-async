@@ -39,7 +39,10 @@
 
   (cond
     (nil? response)
-    (res nil)
+    (do
+      (warnf "Ring response was nil")
+      (tracef "Cause")
+      (res ""))
 
     (read-port? response)
     (go (handle-response req res (<! response)))
