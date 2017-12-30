@@ -42,7 +42,7 @@
     (do
       (warnf "Ring response was nil")
       (tracef "Cause")
-      (res ""))
+      (res (r/no-content)))
 
     (read-port? response)
     (go (handle-response req res (<! response)))
