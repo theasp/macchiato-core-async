@@ -41,7 +41,6 @@
     (nil? response)
     (do
       (warnf "Ring response was nil")
-      (tracef "Cause")
       (res (r/no-content)))
 
     (read-port? response)

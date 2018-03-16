@@ -1,16 +1,16 @@
-(defproject ca.gt0.theasp/macchiato-core-async "0.2.0"
+(defproject ca.gt0.theasp/macchiato-core-async "0.2.1"
   :description "Core.async ring handler support for Macchiato"
   :url "https://github.com/theasp/macchiato-core-async"
   :license {:name "MIT License"
             :url  "http://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.946"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojurescript "1.10.145"]
                  [com.taoensso/timbre "4.10.0"]
-                 [macchiato/core "0.2.2"]]
+                 [macchiato/core "0.2.10"]]
   :jvm-opts ^:replace ["-Xmx1g" "-server"]
   :plugins [[lein-npm "0.6.2"]
-            [lein-cljsbuild "1.1.6"]
-            [lein-codox "0.10.2"]]
+            [lein-cljsbuild "1.1.7"]
+            [lein-codox "0.10.3"]]
   :npm {:dependencies [[source-map-support "0.4.0"]]}
   :source-paths ["src" "target/classes"]
   :clean-targets ["out" "release"]
