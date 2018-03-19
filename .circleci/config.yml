@@ -39,7 +39,10 @@ jobs:
             - ~/.m2
             - ~/app/node_modules
           key: v1-dependencies-{{ checksum "project.clj" }}
-
       - run: lein do test, uberjar
-      - run: (cd ~/ && wget -O - $STASH_URL | gpg2 --passphrase-fd 10 --batch --yes - 10< <(echo $STASH_KEY) | tar xvz)
-      - run: lein deploy clojars
+      - deploy:
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              (cd ~/ && wget -O - $STASH_URL | gpg2 --passphrase-fd 10 --batch --yes - 10< <(echo $STASH_KEY) | tar xvz)
+              lein deploy clojars
+            fi
